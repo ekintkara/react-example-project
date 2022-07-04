@@ -13,7 +13,7 @@ export default class CategoryList extends Component {
       .then((response) => response.json())
       .then((data) => this.setState({ categories: data }));
   };
-
+// asdasd
   render() {
     return (
       <div>
