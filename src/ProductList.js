@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table } from "reactstrap";
+import { Table, Button } from "reactstrap";
 export default class ProductList extends Component {
  
   render() {
@@ -12,21 +12,26 @@ export default class ProductList extends Component {
           <thead>
             <tr>
               <th>#</th>
-              <th>Product Name</th>
-              <th>Unit Price</th>
-              <th>Quantity Per Unit</th>
-              <th>Units In Stock</th>
-              <th></th>
+              <th style={{ textAlign: "center" }}>Product Name</th>
+              <th style={{ textAlign: "center" }}>Unit Price</th>
+              <th style={{ textAlign: "center" }}>Quantity Per Unit</th>
+              <th style={{ textAlign: "center" }}>Units In Stock</th>
             </tr>
           </thead>
           <tbody>
             {this.props.products.map((product) => (
               <tr key={product.id}>
                 <th scope="row">{product.id}</th>
-                <td>{product.productName}</td>
-                <td>{product.unitPrice}</td>
-                <td>{product.quantityPerUnit}</td>
-                <td>{product.unitsInStock}</td>
+                <td style={{ textAlign: "center" }}>{product.productName}</td>
+                <td style={{ textAlign: "center" }}>{product.unitPrice}</td>
+                <td style={{ textAlign: "center" }}>
+                  {product.quantityPerUnit}
+                </td>
+                <td style={{ textAlign: "center" }}>{product.unitsInStock}</td>
+                <td>
+                  
+                  <Button onClick={()=>this.props.addToCart(product)} color="primary">Add</Button>
+                </td>
               </tr>
             ))}
           </tbody>
