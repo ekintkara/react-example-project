@@ -3,7 +3,7 @@ import Navi from "./Navi";
 import CategoryList from "./CategoryList";
 import ProductList from "./ProductList";
 import { Container, Row, Col } from "reactstrap";
-
+import alertify from "alertifyjs";
 export default class App extends Component {
   state = { currentCategory: "", products: [], cart: [ ] };
 
@@ -30,7 +30,14 @@ export default class App extends Component {
     // var addedItem = newcart.find((c) => c.product.id === product.id);
     newcart.push({ product: product, quantity: 1 });
     this.setState({ cart: newcart });
+    alertify.success(product.productName + "  added to cart",2)
   };
+  
+  removeFromCart=(product)=>{
+    let newcart = this.state.cart.filter(c=>c.product.id!==product.id)
+    this.setState({cart:newcart})
+  }
+
 
   render() {
     let categoryInfo = { title: "Category List" };
@@ -40,7 +47,7 @@ export default class App extends Component {
       <div>
         <Row>
           <Col xs="12">
-            <Navi cart={this.state.cart} info={naviBar} />
+            <Navi removeFromCart={this.removeFromCart} cart={this.state.cart} info={naviBar} />
           </Col>
         </Row>
 
