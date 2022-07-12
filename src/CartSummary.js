@@ -15,7 +15,7 @@ export default class CartSummary extends Component {
     return (
       <UncontrolledDropdown inNavbar nav>
         <DropdownToggle caret nav>
-          Cart--{this.props.cart.length}
+          Cart
         </DropdownToggle>
         <DropdownMenu right style={{ textAlign: "center" }}>
           {this.props.cart.map((cartItem) => (
