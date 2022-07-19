@@ -41,4 +41,4 @@ export default class ProductList extends Component {
   }
 }
 
-console.log()
+console.log("falan")   
