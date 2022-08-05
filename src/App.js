@@ -9,7 +9,6 @@ import Notfound from "./Notfound";
 import CartList from "./CartList";
 import FormDemo1 from "./FormDemo1";
 
-
 export default class App extends Component {
   state = { currentCategory: "", products: [], cart: [] };
 
@@ -97,8 +96,9 @@ export default class App extends Component {
                     />
                   )}
                 />
+
+                <Route path="/form1" component={FormDemo1} />
                 <Route component={Notfound} />
-                <Route path="/form1" component={FormDemo1}/>
               </Switch>
             </Col>
           </Row>

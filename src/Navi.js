@@ -20,9 +20,9 @@ export default class navi extends Component {
           <NavbarToggler onClick={function noRefCheck() {}} />
           <Collapse navbar>
             <Nav className="me-auto" navbar>
-              <NavItem>
+              <NavLink>
                 <Link to="/form1">Form Demo 1</Link>
-              </NavItem>
+              </NavLink>
               <CartSummary
                 removeFromCart={this.props.removeFromCart}
                 cart={this.props.cart}
